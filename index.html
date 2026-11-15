@@ -342,6 +342,12 @@
 </head>
 <body>
 <header class="hero">
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+  <div class="orb orb-3" aria-hidden="true"></div>
+  <div class="orb orb-4" aria-hidden="true"></div>
+  <div class="hills" aria-hidden="true"></div>
+  <div class="hero-inner">
   <p class="eyebrow">Muhammad Usama</p>
   <h1>Stories, told gently.<br>Reels, from everywhere.</h1>
   <p class="lede">I am a cybersecurity student. I make AI anime films with my own voice — and I collect the world's viral moments, one reel at a time.</p>
@@ -351,6 +357,7 @@
     <a href="https://www.instagram.com/usamabkr85/" target="_blank" rel="me noopener">🔥 Viral Daily</a>
     <a href="https://www.facebook.com/profile.php?id=61596287158561" target="_blank" rel="me noopener">f Facebook</a>
   </nav>
+  </div>
 </header>
 
 <main>
@@ -480,5 +487,58 @@
   <p>© 2026 Muhammad Usama · Anime Valley Stories · Viral Daily</p>
   <p>Credits: films made with Beyond Sumi, thumbnails with Beyond Artist, and AEO / SEO / GEO with Beyond SEO — all by Beyond Tahir (<a href="https://www.youtube.com/@beyondtahir" target="_blank" rel="noopener">@beyondtahir</a>).</p>
 </footer>
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* 3D tilt + gloss that follows the pointer (mouse devices only) */
+  if (fine && !reduced) {
+    document.querySelectorAll('.card').forEach(function (card) {
+      card.addEventListener('pointermove', function (e) {
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width;
+        var py = (e.clientY - r.top) / r.height;
+        card.style.setProperty('--ry', ((px - 0.5) * 10).toFixed(2) + 'deg');
+        card.style.setProperty('--rx', ((0.5 - py) * 8).toFixed(2) + 'deg');
+        card.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
+        card.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+      });
+      card.addEventListener('pointerleave', function () {
+        card.style.setProperty('--rx', '0deg');
+        card.style.setProperty('--ry', '0deg');
+      });
+    });
+
+    /* Gentle parallax on the hero orbs */
+    var orbs = document.querySelectorAll('.orb');
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        var y = window.scrollY;
+        orbs.forEach(function (orb, i) {
+          orb.style.translate = '0 ' + (y * (0.04 + i * 0.02)).toFixed(1) + 'px';
+        });
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
+  /* Reveal cards as they scroll into view */
+  if ('IntersectionObserver' in window && !reduced) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.card').forEach(function (card) { io.observe(card); });
+  } else {
+    document.querySelectorAll('.card').forEach(function (card) { card.classList.add('in'); });
+  }
+})();
+</script>
 </body>
 </html>
