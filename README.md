@@ -1,89 +1,95 @@
-# Muhammad Usama — What I Do
+# Muhammad Usama — Showcase Website
 
-**What is this repo?** The source code for **Muhammad Usama's personal showcase website** — "Muhammad Usama — What I Do". **What is on it?** His **Anime Valley Stories** gentle AI anime films and shorts, narrated in his own voice, plus **Viral Daily** trending reels from around the world. **Where is it live?** On GitHub Pages at **https://muhammadusama96.github.io/my-first/** — free, fast and mobile-friendly.
+Live at https://muhammadusama96.github.io/my-first/
 
-Muhammad Usama is a cybersecurity student. He makes AI anime films with his own voice — and collects the world's viral moments, one reel at a time.
+A free, fast, mobile-friendly site showing all of Usama's work: Anime Valley
+Stories (anime films + shorts), Viral Daily (viral reels) and GTA 6 stream
+clips (@Gta.Clipper96).
 
-## Live site
+## What this rebuild is (22 Nov 2026)
 
-🌐 **https://muhammadusama96.github.io/my-first/**
+The old single-page site is replaced by a rebuilt **7-page site in one
+self-contained file**, with hash routing — every page is a section inside
+`index.html`, switched by JavaScript on the `#hash`:
 
-- **Repo:** https://github.com/muhammadusama96/my-first (public, `main` branch)
-- **Hosting:** GitHub Pages, deployed from the `main` branch (`/(root)`), HTTPS included, free
-- **Profiles:** [YouTube — @animevalleystory](https://www.youtube.com/@animevalleystory) · [Instagram — @animevalleystories](https://www.instagram.com/animevalleystories/) · [Instagram — @usamabkr85 (Viral Daily)](https://www.instagram.com/usamabkr85/) · [Facebook — Usama Stories](https://www.facebook.com/profile.php?id=61596287158561)
+| # | Page | URL hash |
+|---|------|----------|
+| 1 | Home | `#home` |
+| 2 | What I do | `#overview` |
+| 3 | Work | `#work` |
+| 4 | Channels | `#channels` |
+| 5 | Deeds log | `#log` |
+| 6 | How I make it | `#process` |
+| 7 | Your story | `#story` |
 
-## What is on the site
+- **3D hero lantern** — a real Three.js lantern rendered on a canvas on the
+  home page (no still image), with a still fallback behind it.
+- **SEO / AEO / GEO** — JSON-LD with 27 nodes, including 22 VideoObjects, one
+  per film, Short and reel; canonical URL, Open Graph and geo meta included.
+- **No frameworks, no tracking.** The only external dependency is Google
+  Fonts. All images, CSS and JavaScript are inlined in the single file.
 
-### 🌿 Anime Valley Stories — AI anime films
+## Files
 
-Gentle watercolour-anime films about promises, waiting, kindness and home. Every film is narrated in Muhammad Usama's own voice. Story and film made with Beyond Sumi by Beyond Tahir ([@beyondtahir](https://www.youtube.com/@beyondtahir)). Thumbnails and posters with Beyond Artist, and AEO / SEO / GEO with Beyond SEO — both also by Beyond Tahir.
+- `index.html` — the whole site (12.6 MB, self-contained).
+- `index-single-file.html` — an identical copy of `index.html`, kept so the
+  old "one-step publishing" route still works (paste it on boomurl / Netlify
+  Drop exactly as before).
+- `README.md` — this file.
+- `styles.css` — **no longer used.** The rebuilt file inlines all CSS, so
+  the old `styles.css` in the repo is orphaned. It can be deleted from the
+  repo, or left in place — it does not affect the site either way.
 
-| Film | Watch |
-|---|---|
-| The Girl from the Green Valley — Part 1 | [YouTube](https://www.youtube.com/watch?v=iZzU7QHOMxk) |
-| He Came Back Next Summer — Part 2 | [YouTube](https://www.youtube.com/watch?v=B8j_EuwaD6E) |
-| The Lantern No One Lit | [YouTube](https://www.youtube.com/watch?v=4BRkMWeeQzU) |
-| The Window That Stayed Lit | [YouTube](https://www.youtube.com/watch?v=NLXP7lNcO2E) |
-| The Tree Kept Her Place for 10 Years — Letters in the Old Tree | [YouTube](https://www.youtube.com/watch?v=bDAf8iQNGNc) |
-| The Dog and the Pigeon | [YouTube](https://www.youtube.com/watch?v=2OfKQnBrOow) |
+## Latest content on the site (verified in the file, 20 Nov 2026)
 
-### 🎬 Shorts series
+- Green Valley Part 5 — "A Leaf to Carry Home" (newest film):
+  https://www.youtube.com/watch?v=8XCGYVnUf0o
+- Letters in the Old Tree, Part 12 — "The Bench Is Mended":
+  https://www.instagram.com/p/Df-OhAsOs2E/
+- Letters in the Old Tree, Part 11 — "The Hollow Is Empty":
+  https://www.instagram.com/p/Df8M2yQOgya/
+- Buster & Pip Ep. 5 — "He Left Bread Out on Purpose":
+  https://www.youtube.com/shorts/PLRYN8M9JtI
+- GTA 6 clips — @Gta.Clipper96, launched 20 Nov 2026 (best moments from
+  Kai Cenat's GTA 6 streams, four clips live so far — profile links only, no
+  individual clip URLs in the file):
+  https://www.instagram.com/gta.clipper96/
+- Earlier films, Shorts and Viral Daily reels are all listed on the Work page
+  with their live links (22 VideoObjects in the JSON-LD).
 
-| Short | Watch |
-|---|---|
-| Buster & Pip — Ep. 1: The Pigeon Stole the Market Cart | [YouTube Short](https://www.youtube.com/shorts/x7pa7Va9A1A) |
-| Buster & Pip — Ep. 2: Why Pip Stole the Cart | [YouTube Short](https://www.youtube.com/shorts/SSFZHxCPDXk) |
-| Buster & Pip — The Runaway Cart | [YouTube Short](https://www.youtube.com/shorts/FwccHXLdJlg) |
-| Buster Finally Shares His Roll With Pip | [YouTube Short](https://youtube.com/shorts/85s8kG2wkew) |
-| Letters — Short 1: If You Leave, I Will Wait | [YouTube Short](https://www.youtube.com/shorts/y0sPazlRlxA) |
-| Letters — Short 2: The Tree Kept Your Place | [YouTube Short](https://www.youtube.com/shorts/lzcP3WKed_A) |
-| Letters — Short 3: He Waited 10 Years | [YouTube Short](https://www.youtube.com/shorts/bk6OXCufJbw) |
-| Letters — Daily series (Facebook & Instagram), Parts 3–4 | [Part 3 — Instagram](https://www.instagram.com/reel/Dfm7x97DxlY/) · [Part 4 — Instagram](https://www.instagram.com/reel/DfqHnNkj9Wy/) |
+NOT on this version of the site yet: Green Valley Part 6, Letters Part 13/14,
+and Buster & Pip Ep. 6 were not in the exported file — they go in with the
+next update, once their live links are known. No video URL was guessed here.
 
-> If you have a real story in your mind, write it in the comments — we will create an anime for it.
+## Channels
 
-### 🔥 Viral Daily — trending reels
+- Anime Valley Stories — YouTube: https://www.youtube.com/@animevalleystory
+- Anime Valley Stories — Instagram: https://www.instagram.com/animevalleystories/
+- Anime Valley Stories — Facebook ("Usama Stories"): https://www.facebook.com/profile.php?id=61596287158561
+- Viral Daily — Instagram (@usamabkr85): https://www.instagram.com/usamabkr85/
+- GTA clips — Instagram (@Gta.Clipper96): https://www.instagram.com/gta.clipper96/
+- GTA clips — Facebook (GtaClipper96): https://www.facebook.com/profile.php?id=61596312286692
 
-Viral videos from all over the world — new trending reels every day, each one remade as an original reel in the style of the trend. Instagram: [@usamabkr85](https://www.instagram.com/usamabkr85/).
+## Credit
 
-| Reel | Watch |
-|---|---|
-| Nvidia CEO Resigns — $500 Billion Gone | [Instagram](https://www.instagram.com/p/DfqYr5tCQxP/) |
-| The Photo, Seven Years Later | [Instagram](https://www.instagram.com/p/DfqdnhAi8Mr/) |
-| Friday the 13th Doomsday Claim — Debunked | [Instagram](https://www.instagram.com/p/DfqrIVqCj8R/) |
+Films made with Beyond Sumi by Beyond Tahir (@beyondtahir), credited on every
+video. The site's "Credit & thanks" section on the Your story page says:
+"My films, this website and my GitHub skills collection are all built with
+the skills created by Beyond Tahir (@beyondtahir) — his effort and his craft
+sit behind every video I publish."
 
-## How it is built
+## Publish / update — GitHub Pages (free, permanent, no banner)
 
-- **Two files:** `index.html` + `styles.css` — the whole site. No frameworks, no tracking, no external assets.
-- **`index-single-file.html`:** the same site with the CSS inlined, for one-step publishing elsewhere (for example boomurl).
-- **Hosting:** GitHub Pages, free forever, HTTPS included. A custom domain can be added later.
+The repo is `muhammadusama96/my-first`, branch `main`, Pages deploys from
+`main` root. Push via the github.com web UI — see `PUSH-STEPS.md` for the
+exact clicks. (The Muse GitHub App cannot write to this repo — it gets 403 —
+so do not try to push from here.)
 
-Every link on the site was checked: the film and Short links are the live YouTube URLs verified when each video was posted; the Instagram/Facebook links are the live profiles. A fresh re-check with yt-dlp on 2026-11-13 hit YouTube's bot-check on some videos ("Sign in to confirm you're not a bot") — an extraction block, not a removed video — so the links stand on the recent live verifications. If any link ever goes stale, remove that card.
+## Updating the site
 
-## How to update it
-
-The repo already exists as [`muhammadusama96/my-first`](https://github.com/muhammadusama96/my-first) and GitHub Pages is already live at https://muhammadusama96.github.io/my-first/ — there is nothing left to create or set up. To update the site:
-
-1. Edit `index.html` (content and links) and `styles.css` (design).
-2. Rebuild the single-file copy:
-   ```bash
-   python3 -c "html=open('index.html').read(); css=open('styles.css').read(); open('index-single-file.html','w').write(html.replace('<link rel=\"stylesheet\" href=\"styles.css\">','<style>\n'+css+'\n</style>'))"
-   ```
-3. Push `index.html`, `styles.css` and `index-single-file.html` to the `main` branch. GitHub Pages redeploys automatically from `main` (`/(root)`).
-
-### Alternative hosts (not needed — GitHub Pages is the live site)
-
-- **boomurl (fastest):** open https://boomurl.com/paste, paste the whole `index-single-file.html`, pick a name, confirm the 6-digit code emailed to you. Live at `https://<name>.boomurl.me/` — free tier shows a small "hosted by boomurl" banner.
-- **Netlify Drop:** drag the `website` folder onto https://app.netlify.com/drop (free account, no card). Live on a `*.netlify.app` address.
-
-## About
-
-I'm Muhammad Usama, a cybersecurity student. I make Anime Valley Stories — gentle anime films and shorts, narrated in my own cloned voice — and Viral Daily, a daily feed of the world's trending moments, remade as original reels. Story and film made with Beyond Sumi by Beyond Tahir ([@beyondtahir](https://www.youtube.com/@beyondtahir)). Thumbnails and posters with Beyond Artist, and AEO / SEO / GEO with Beyond SEO — both also by Beyond Tahir.
-
-## Credits
-
-- Films made with **Beyond Sumi** by Beyond Tahir ([@beyondtahir](https://www.youtube.com/@beyondtahir) · [Instagram](https://www.instagram.com/beyondtahir) · [GitHub](https://github.com/beyondtahir))
-- Thumbnails and posters with **Beyond Artist**, also by Beyond Tahir
-- AEO / SEO / GEO with **Beyond SEO**, also by Beyond Tahir
-
-© 2026 Muhammad Usama · Anime Valley Stories · Viral Daily
+The site is edited as the Muse artifact and re-exported as one HTML file.
+To publish a new version: replace `index.html` AND `index-single-file.html`
+with the new export (both files are always identical), update the "Latest
+content" list above with the new releases and their verified live links, and
+re-publish by the same route. Never guess a video URL — only links verified
+live go on the site.
